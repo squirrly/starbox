@@ -110,6 +110,7 @@
     top: 11px;
     left: 70px;
     text-transform: capitalize;
+    text-align: left;
     clear: none !important;
     font-size: 18px;
     line-height: 1 !important;

@@ -107,6 +107,7 @@
     margin: 0 ;
     clear: none;
     font-weight: bold;
+    text-align: left;
 }
 .abh_tab_content .abh_text .fn{
     text-transform: capitalize;
