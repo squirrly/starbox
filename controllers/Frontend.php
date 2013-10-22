@@ -33,6 +33,7 @@ class ABH_Controllers_Frontend extends ABH_Classes_FrontController {
      */
     public function hookShortStarbox($param) {
         $id = 0;
+        $str = '';
         $desc = '';
         $theme = '';
 
@@ -67,6 +68,7 @@ class ABH_Controllers_Frontend extends ABH_Classes_FrontController {
         }
         //
         //show all the authors in the content
+
         if ($id === 'all') {
             $args = array(
                 'orderyby' => 'post_count',
@@ -79,19 +81,27 @@ class ABH_Controllers_Frontend extends ABH_Classes_FrontController {
 
             return $str;
         } elseif (!is_numeric($id)) {
+            if (strpos($id, ',') !== false)
+                $show_list = @preg_split("/,/", $id);
+            else
+                $show_list = array($id);
+
             $args = array(
                 'orderyby' => 'post_count',
-                'order' => 'DESC'
+                'order' => 'DESC',
             );
+
             $users = get_users($args);
             foreach ($users as $user) {
-                if ($id === $user->user_login) {
-                    return ABH_Classes_ObjController::getController('ABH_Controllers_Frontend')->showBox($user->ID, $desc);
-                }
+                // show mutiple authors in one shortcode
+                if (in_array($user->user_login, $show_list) || in_array($user->ID, $show_list))
+                    $str .= ABH_Classes_ObjController::getController('ABH_Controllers_Frontend')->showBox($user->ID, $desc);
             }
+            return $str;
         }
-        else
+        else {
             return ABH_Classes_ObjController::getController('ABH_Controllers_Frontend')->showBox((int) $id, $desc);
+        }
     }
 
     public function hookShortWidgetStarbox($content) {
