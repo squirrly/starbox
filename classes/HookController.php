@@ -25,7 +25,7 @@ class ABH_Classes_HookController {
             'notices' => 'admin_notices',
             // --
             'frontinit' => 'init',
-            'fronthead' => 'wp_head',
+            'fronthead' => 'get_header',
             'frontcontent' => 'the_content',
             'frontwidget' => 'widget_text',
             'frontfooter' => 'wp_footer',

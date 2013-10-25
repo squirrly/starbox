@@ -49,8 +49,10 @@ class ABH_Classes_DisplayController {
 
 
         if ($css_uri <> '') {
-            wp_deregister_style($name);
-            wp_register_style($name, $css_uri, null, ABH_VERSION);
+            if (wp_style_is($name))
+                wp_deregister_style($name);
+
+            wp_register_style($name, $css_uri, null, ABH_VERSION, 'all');
             wp_enqueue_style($name);
         }
 
