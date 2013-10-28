@@ -60,6 +60,9 @@ class ABH_Classes_DisplayController {
             wp_register_script('jquery', "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", false, 'latest', false);
             wp_enqueue_script('jquery');
 
+            if (wp_script_is($name))
+                wp_deregister_script($name);
+
             wp_register_script($name, $js_uri, array('jquery'), ABH_VERSION, true);
             wp_enqueue_script($name);
         }

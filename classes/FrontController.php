@@ -92,7 +92,7 @@ class ABH_Classes_FrontController {
     }
 
     /**
-     * first function call for any class
+     * first function call for any class  
      *
      */
     protected function action() {
@@ -109,6 +109,8 @@ class ABH_Classes_FrontController {
      * @return void
      */
     public function hookHead() {
+        if (!is_admin())
+            return;
         if ($class = ABH_Classes_ObjController::getClassPath($this->name)) {
             ABH_Classes_ObjController::getController('ABH_Classes_DisplayController')
                     ->loadMedia($class['name']);
