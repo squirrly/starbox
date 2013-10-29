@@ -96,6 +96,11 @@ So get your very own Starbox now:
 
 
 == Changelog ==
+= 1.0.7 =
+* Fixed shortcode bugs
+* Fixed display bugs
+* Fixed css bugs in themes
+
 = 1.0.6 =
 * Added [starbox id="login_name" desc="custom description" ] params for shortcode
 * Added [starbox id=all] to list all the authors
