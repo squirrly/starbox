@@ -18,6 +18,11 @@
     margin: 0 !important;
     padding: 0 !important;
 }
+.abh_tabs li:after{
+    content: "";
+    padding: 0;
+    margin: 0;
+}
 .abh_tabs li:before{
     content: "";
     padding: 0;
