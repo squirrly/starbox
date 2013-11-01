@@ -117,7 +117,7 @@ class ABH_Controllers_Frontend extends ABH_Classes_FrontController {
         $desc = '';
         $theme = '';
 
-        if (preg_match($this->shortcode, $content, $out)) {
+        if (@preg_match($this->shortcode, $content, $out)) {
             if (!empty($out) && isset($out[1])) {
                 if (trim($out[1]) <> '') {
                     $out[1] = str_replace(array('" ', '"'), array('"&', ''), $out[1]);
@@ -303,10 +303,11 @@ class ABH_Controllers_Frontend extends ABH_Classes_FrontController {
         if (!$this->show || (isset($this->custom[$post->ID]) && $this->custom[$post->ID]))
             return $content;
 
-        if (preg_match($this->shortcode, $content)) {
-            $this->custom[$post->ID] = true;
-            return $content;
-        }
+        if (ABH_Classes_Tools::getOption('abh_shortcode') == 1)
+            if (preg_match($this->shortcode, $content)) {
+                $this->custom[$post->ID] = true;
+                return $content;
+            }
 
         $content = $this->showAuthorBox($content);
 

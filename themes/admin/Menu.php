@@ -107,7 +107,16 @@
 
 
                     <div><br /><br /><?php _e('Add Starbox in the post content or widgets with the shortcode <strong>[starbox]</strong> or <strong>[starbox id=USER_ID]</strong>', _ABH_PLUGIN_NAME_); ?></div>
-
+                    <div class="abh_option_content">
+                        <div class="abh_switch">
+                            <input id="abh_shortcode_on" type="radio" class="abh_switch-input" name="abh_shortcode"  value="1" <?php echo ((ABH_Classes_Tools::getOption('abh_shortcode') == 1) ? "checked" : '') ?> />
+                            <label for="abh_shortcode_on" class="abh_switch-label abh_switch-label-off"><?php _e('Yes', _ABH_PLUGIN_NAME_); ?></label>
+                            <input id="abh_shortcode_off" type="radio" class="abh_switch-input" name="abh_shortcode" value="0" <?php echo ((!ABH_Classes_Tools::getOption('abh_shortcode')) ? "checked" : '') ?> />
+                            <label for="abh_shortcode_off" class="abh_switch-label abh_switch-label-on"><?php _e('No', _ABH_PLUGIN_NAME_); ?></label>
+                            <span class="abh_switch-selection"></span>
+                        </div>
+                        <span><?php echo __('Check for <strong>[starbox]</strong> shortcode in my blog.', _ABH_PLUGIN_NAME_); ?></span>
+                    </div>
                 </fieldset>
 
             </div>

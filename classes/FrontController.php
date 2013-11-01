@@ -20,6 +20,12 @@ class ABH_Classes_FrontController {
 
     public function __construct() {
 
+        /* Load error class */
+        ABH_Classes_ObjController::getController('ABH_Classes_Error');
+
+        /* Load Tools */
+        ABH_Classes_ObjController::getController('ABH_Classes_Tools');
+
         /* get the name of the current class */
         $this->name = get_class($this);
 
@@ -67,12 +73,6 @@ class ABH_Classes_FrontController {
         if (!is_admin())
             return;
 
-        /* Load error class */
-        ABH_Classes_ObjController::getController('ABH_Classes_Error');
-
-        /* Load Tools */
-        ABH_Classes_ObjController::getController('ABH_Classes_Tools');
-
         /* Load the Submit Actions Handler */
         ABH_Classes_ObjController::getController('ABH_Classes_Action');
         ABH_Classes_ObjController::getController('ABH_Classes_DisplayController');
@@ -92,7 +92,7 @@ class ABH_Classes_FrontController {
     }
 
     /**
-     * first function call for any class  
+     * first function call for any class
      *
      */
     protected function action() {
@@ -109,8 +109,9 @@ class ABH_Classes_FrontController {
      * @return void
      */
     public function hookHead() {
-        if (!is_admin())
+        if (!is_admin()) //this hook is for admin panel only
             return;
+
         if ($class = ABH_Classes_ObjController::getClassPath($this->name)) {
             ABH_Classes_ObjController::getController('ABH_Classes_DisplayController')
                     ->loadMedia($class['name']);

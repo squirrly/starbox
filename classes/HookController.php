@@ -100,6 +100,11 @@ class ABH_Classes_HookController {
         if (self::$shortCodesSet == true)
             return;
 
+        //If the user doesn't use shortcodes
+
+        if (ABH_Classes_Tools::getOption('abh_shortcode') == 0)
+            return;
+
         self::$shortCodesSet = true;
         /* if config allready in cache */
         if (!isset(ABH_Classes_ObjController::$config)) {
@@ -122,7 +127,7 @@ class ABH_Classes_HookController {
                             if (!is_array($block['shortcodes']['shortcode'])) {
 
                                 if (is_callable(array($instance, 'hookShortWidget' . ucfirst($block['shortcodes']['shortcode'])))) {
-                                    add_action('widget_text', array($instance, 'hookShortWidget' . ucfirst($block['shortcodes']['shortcode'])), 10);
+                                    add_action('widget_text', array($instance, 'hookShortWidget' . ucfirst($block['shortcodes']['shortcode'])), 10, 1);
                                 }
                                 add_shortcode($block['shortcodes']['shortcode'], array($instance, 'hookShort' . ucfirst($block['shortcodes']['shortcode'])));
                             } else {

@@ -83,6 +83,7 @@ class ABH_Classes_Tools extends ABH_Classes_FrontController {
             'abh_inpages' => 0,
             'abh_ineachpost' => 0,
             'abh_showopengraph' => 1,
+            'abh_shortcode' => 1,
             // --
             'abh_position' => 'down',
             'anh_crt_posts' => 3,
