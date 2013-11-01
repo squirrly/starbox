@@ -12,8 +12,6 @@ class ABH_Controllers_Frontend extends ABH_Classes_FrontController {
         parent::__construct();
 
         $this->shortcode = '/\[starbox([\s+][^\]]+)*\]/i';
-        //Load the tools for options in frontend
-        ABH_Classes_ObjController::getController('ABH_Classes_Tools');
     }
 
     /**
@@ -299,8 +297,7 @@ class ABH_Controllers_Frontend extends ABH_Classes_FrontController {
      */
     public function hookFrontcontent($content) {
         global $post;
-
-        if (!$this->show || (isset($this->custom[$post->ID]) && $this->custom[$post->ID]))
+        if (!$this->show || (isset($this->custom[$post->ID]) && $this->custom[$post->ID] == true))
             return $content;
 
         if (ABH_Classes_Tools::getOption('abh_shortcode') == 1)
@@ -308,6 +305,7 @@ class ABH_Controllers_Frontend extends ABH_Classes_FrontController {
                 $this->custom[$post->ID] = true;
                 return $content;
             }
+
 
         $content = $this->showAuthorBox($content);
 

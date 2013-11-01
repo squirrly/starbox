@@ -26,6 +26,7 @@ class ABH_Classes_HookController {
             // --
             'frontinit' => 'init',
             'fronthead' => 'get_header',
+            'fronthead' => 'wp_head',
             'frontcontent' => 'the_content',
             'frontwidget' => 'widget_text',
             'frontfooter' => 'wp_footer',
