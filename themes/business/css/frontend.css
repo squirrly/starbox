@@ -113,6 +113,7 @@
     clear: none;
     font-weight: bold;
     text-align: left;
+    line-height: 20px;
 }
 .abh_tab_content .abh_text .fn{
     text-transform: capitalize;
@@ -219,4 +220,10 @@
     -moz-border-radius: 5px 5px 0 0;
     vertical-align: top;
     text-shadow: 1px 1px #888;
+}
+
+.abh_box .vcard{
+    background: none;
+    font-size: 100%;
+    border: none;
 }

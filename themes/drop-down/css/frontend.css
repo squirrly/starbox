@@ -241,3 +241,9 @@
     vertical-align: top;
     text-shadow: 1px 1px #888;
 }
+
+.abh_box .vcard{
+    background: none;
+    font-size: 100%;
+    border: none;
+}

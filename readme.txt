@@ -2,7 +2,7 @@
 Contributors: florinmuresan,cifi
 Tags: author,publisher,meta,post,posts,page,pages,google,facebook,snippet,plugin,html5,vcard,klout,users,user,author box,rich snippet
 Requires at least: 3.1
-Tested up to: 3.6.1
+Tested up to: 3.7.1
 Stable tag: trunk
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EBVRXTDRTJH2W&lc=US&item_name=StarBox%20Plugin&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 
@@ -100,6 +100,7 @@ So get your very own Starbox now:
 * Fixed shortcode bugs
 * Fixed display bugs
 * Fixed css bugs in themes
+* Compatible with 3.7.1
 
 = 1.0.6 =
 * Added [starbox id="login_name" desc="custom description" ] params for shortcode
@@ -137,6 +138,14 @@ So get your very own Starbox now:
 * Added author box custom image upload
 * WordPress 3.6.1 compatibility
 
+== Frequently Asked Questions ==
+= Why there is no meta for google and facebook authorship? =
+You have to fill the google and facebook social in your profile and it will show up.
+
+= How can i call the author box in post or widget? =
+Just add [starbox] or [starbox id="login_name"] in your post or widget.
+You can also add different description for the author box adding [starbox id="login_name" desc="custom description" ]
+And more, add a default theme fot author box [starbox id="login_name" desc="custom description"  theme="business"]
 
 == Credits ==
 Squirrly Limited UK
