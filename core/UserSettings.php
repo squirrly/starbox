@@ -11,11 +11,13 @@ class ABH_Core_UserSettings extends ABH_Classes_BlockController {
 
     public function init($user) {
         $this->user = $user;
+
         if (isset($this->user->ID))
             $this->author = ABH_Classes_Tools::getOption('abh_author' . $this->user->ID);
 
         $default = array(
             'abh_use' => 1,
+            'abh_nofollow_social' => 1,
             // --
             'abh_title' => "",
             'abh_company' => "",
@@ -38,6 +40,7 @@ class ABH_Core_UserSettings extends ABH_Classes_BlockController {
             'abh_theme' => "default",
             'abh_position' => "default",
         );
+
         if (!isset($this->author) || empty($this->author))
             $this->author = $default;
 
@@ -57,6 +60,7 @@ class ABH_Core_UserSettings extends ABH_Classes_BlockController {
                 $settings = ABH_Classes_Tools::getOption('abh_author' . $user_id);
 
                 $settings['abh_use'] = (bool) ABH_CLasses_Tools::getValue('abh_use');
+                $settings['abh_nofollow_social'] = (int) ABH_CLasses_Tools::getValue('abh_nofollow_social');
 
                 $settings['abh_title'] = ABH_CLasses_Tools::getValue('abh_title');
                 $settings['abh_company'] = ABH_CLasses_Tools::getValue('abh_company');

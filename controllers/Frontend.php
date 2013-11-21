@@ -284,7 +284,8 @@ class ABH_Controllers_Frontend extends ABH_Classes_FrontController {
                         ->loadMedia(_ABH_ALL_THEMES_URL_ . $theme . '/js/frontend.js'); //load the css and js for frontend
 
                 if (!is_author())
-                    echo '<style type="text/css">.author-box, .article-author, .author-info, #entry-author-info, #author-bio-box, #cab-author, #authorarea, .author-wrap{display:none;}</style>';
+                    ABH_Classes_ObjController::getController('ABH_Classes_DisplayController')
+                            ->loadMedia(_ABH_ALL_THEMES_URL_ . 'admin/css/hidedefault.css'); //load the css and js for frontend
             }
         }
     }

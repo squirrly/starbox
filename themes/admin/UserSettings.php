@@ -109,6 +109,7 @@
             </fieldset>
             <fieldset >
                 <legend><?php _e('Social settings:', _ABH_PLUGIN_NAME_); ?></legend>
+
                 <div id="abh_option_subscribe" <?php if (ABH_Classes_Tools::getOption('abh_subscribe') == 1) echo 'style="display:none"'; ?>>
                     <div id="abh_subscribe"><?php _e('To unlock social fields please enter your email:', _ABH_PLUGIN_NAME_); ?></div>
                     <div id="abh_subscribe_social">
@@ -148,6 +149,18 @@
                     <p><span class="abh_social_settings abh_tumblr"></span><span><?php _e('Tumblr:', _ABH_PLUGIN_NAME_); ?></span> <input type="text" name="abh_tumblr" value="<?php echo $view->author['abh_tumblr']; ?>" size="30" /></p>
                     <p><span class="abh_social_settings abh_youtube"></span><span><?php _e('YouTube:', _ABH_PLUGIN_NAME_); ?></span> <input type="text" name="abh_youtube" value="<?php echo $view->author['abh_youtube']; ?>" size="30" /></p>
                     <p><span class="abh_social_settings abh_vimeo"></span><span><?php _e('Vimeo:', _ABH_PLUGIN_NAME_); ?></span> <input type="text" name="abh_vimeo" value="<?php echo $view->author['abh_vimeo']; ?>" size="30" /></p>
+
+
+                    <div class="abh_option_content">
+                        <div class="abh_switch">
+                            <input id="abh_nofollow_social_on" type="radio" class="abh_switch-input" name="abh_nofollow_social"  value="1" <?php echo ((!$view->author['abh_nofollow_social'] == 0) ? "checked" : '') ?> />
+                            <label for="abh_nofollow_social_on" class="abh_switch-label abh_switch-label-off"><?php _e('Yes', _ABH_PLUGIN_NAME_); ?></label>
+                            <input id="abh_nofollow_social_off" type="radio" class="abh_switch-input" name="abh_nofollow_social" value="0" <?php echo (($view->author['abh_nofollow_social'] == 0) ? "checked" : '') ?> />
+                            <label for="abh_nofollow_social_off" class="abh_switch-label abh_switch-label-on"><?php _e('No', _ABH_PLUGIN_NAME_); ?></label>
+                            <span class="abh_switch-selection"></span>
+                        </div>
+                        <span><?php _e('Add rel="nofollow" to Social links', _ABH_PLUGIN_NAME_); ?></span>
+                    </div>
                 </div>
             </fieldset>
 
