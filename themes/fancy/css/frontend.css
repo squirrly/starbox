@@ -149,7 +149,8 @@
     margin: 0;
 }
 .abh_tab_content .abh_text .abh_description{
-    padding-top: 6px;
+    position: relative !important;
+    padding-top: 6px !important;
     font-size: 14px !important;
     width: 100% !important;
 }

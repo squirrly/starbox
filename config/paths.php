@@ -22,7 +22,7 @@ define('_ABH_ALL_THEMES_DIR_', _ABH_ROOT_DIR_ . '/themes/');
 define('_ABH_THEME_DIR_', _ABH_ROOT_DIR_ . '/themes/' . _ABH_THEME_NAME_ . '/');
 
 /* URLS */
-define('_ABH_URL_', WP_PLUGIN_URL . '/' . _ABH_PLUGIN_NAME_);
+define('_ABH_URL_', plugins_url() . '/' . _ABH_PLUGIN_NAME_);
 define('_ABH_GRAVATAR_URL_', (is_dir(ABSPATH . '/wp-content/uploads/gravatar') ? get_bloginfo('url') . '/wp-content/uploads/gravatar/' : _ABH_URL_ . '/gravatar/'));
 define('_ABH_ALL_THEMES_URL_', _ABH_URL_ . '/themes/');
 define('_ABH_THEME_URL_', _ABH_URL_ . '/themes/' . _ABH_THEME_NAME_ . '/');

@@ -224,8 +224,8 @@ class ABH_Models_Frontend {
             if (get_the_title() <> '')
                 $content .= '
 				<li>
-					<a href="' . get_permalink() . '">' . get_the_title() . '</a><span> - ' .
-                        date_i18n(get_option('date_format'), get_the_time('U')) . '</span>
+					<a href="' . get_permalink() . '">' . get_the_title() . '</a>' .
+                        (((int) get_the_time('U') > 0) ? '<span> - ' . @date_i18n(get_option('date_format'), (int) get_the_time('U')) . '</span>' : '') . '
 				</li>';
         endwhile;
         wp_reset_postdata();
