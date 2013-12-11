@@ -54,6 +54,8 @@ class ABH_Classes_FrontController {
         /* load the blocks for this controller */
 
         ABH_Classes_ObjController::getController('ABH_Classes_ObjController')->getBlocks($this->name);
+
+        $this->hookHead();
     }
 
     protected function output() {

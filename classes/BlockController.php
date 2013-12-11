@@ -48,6 +48,8 @@ class ABH_Classes_BlockController {
 
         if ($this->flush)
             $this->output();
+
+        $this->hookHead();
     }
 
     protected function output() {
