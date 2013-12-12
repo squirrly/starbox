@@ -71,6 +71,7 @@ class ABH_Controllers_Frontend extends ABH_Classes_FrontController {
         //show all the authors in the content
 
         if ($id === 'all') {
+
             $args = array(
                 'orderyby' => 'post_count',
                 'order' => 'DESC'
@@ -78,7 +79,7 @@ class ABH_Controllers_Frontend extends ABH_Classes_FrontController {
             $users = get_users($args);
             foreach ($users as $user) {
                 $str .= ABH_Classes_ObjController::getController('ABH_Controllers_Frontend')->showBox($user->ID, $desc);
-                if (!$force && (!is_single() || !is_singular()))
+                if (!$force && (!is_single() && !is_singular()))
                     break; //don't show multiple authors in post list
             }
 
@@ -99,7 +100,7 @@ class ABH_Controllers_Frontend extends ABH_Classes_FrontController {
                 // show mutiple authors in one shortcode
                 if (in_array($user->user_login, $show_list) || in_array($user->ID, $show_list)) {
                     $str .= ABH_Classes_ObjController::getController('ABH_Controllers_Frontend')->showBox($user->ID, $desc);
-                    if (!$force && (!is_single() || !is_singular()))
+                    if (!$force && (!is_single() && !is_singular()))
                         break; //don't show multiple authors in post list
                 }
             }
