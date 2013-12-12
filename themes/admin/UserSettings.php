@@ -111,7 +111,7 @@
                 <legend><?php _e('Social settings:', _ABH_PLUGIN_NAME_); ?></legend>
 
                 <div id="abh_option_subscribe" <?php if (ABH_Classes_Tools::getOption('abh_subscribe') == 1) echo 'style="display:none"'; ?>>
-                    <div id="abh_subscribe"><?php _e('To unlock social fields please enter your email:', _ABH_PLUGIN_NAME_); ?></div>
+                    <div id="abh_subscribe"><?php _e('To unlock social fields please enter your email (only one email required per entire site):', _ABH_PLUGIN_NAME_); ?></div>
                     <div id="abh_subscribe_social">
                         <span class="abh_social_settings abh_twitter"></span>
                         <span class="abh_social_settings abh_facebook"></span>
@@ -129,7 +129,7 @@
                     <input type="text" style="display: none;" value="<?php echo get_bloginfo('url') ?>" size="30" id="abh_subscribe_url" >
 
                     <input type="button" value="Subscribe" id="abh_subscribe_subscribe">
-                    <div style="margin:3px; font-style: italic;" ><?php _e('You will only subscribe to StarBox News (No spam). <br />We do not connect your site to our server in any way. The plugin is stand-alone.', _ABH_PLUGIN_NAME_); ?></div>
+                    <div style="margin:3px; font-style: italic;" ><?php _e('You will only subscribe to StarBox News (No spam). <br />We do not connect your site to our server in any way. The plugin is stand-alone. <br />Only one email required per entire site.', _ABH_PLUGIN_NAME_); ?></div>
 
                 </div>
                 <div id="abh_option_social" <?php if (ABH_Classes_Tools::getOption('abh_subscribe') == 0) echo 'style="display:none"'; ?>>
