@@ -157,7 +157,7 @@
 }
 .abh_tab_content .abh_description{
     display: none;/*************************/
-    position: relative !important;
+    position: static !important;
     width: 100%!important;
     font-size: 14px !important;
     margin-top: 7px;

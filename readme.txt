@@ -1,6 +1,6 @@
 === Starbox - the Author Box for Humans ===
 Contributors: florinmuresan,cifi
-Tags: author box‎,author,publisher,meta,post,posts,page,pages,google,facebook,snippet,plugin,html5,vcard,klout,users,user,author box,rich snippet,author bio, author bio box
+Tags: author box‎,author,publisher,meta,post,posts,page,pages,google,facebook,snippet,plugin,html5,vcard,klout,users,user,author box,rich snippet,author bio, author bio box,bio
 Requires at least: 3.1
 Tested up to: 3.7.1
 Stable tag: trunk
