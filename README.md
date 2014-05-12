@@ -57,4 +57,4 @@ So get your very own Starbox now:
 6. You know that right now for Google it matters a lot that you have returning visitors (because it means your site is: quality)
 7. You'll get Google Authorship on your hands :-) For all your authors.
 
-<a href="http://www.squirrly.co" title="Online Marketing Tool" >http://www.squirrly.co</a>
+http://www.squirrly.co
