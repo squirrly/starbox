@@ -56,3 +56,5 @@ So get your very own Starbox now:
 5. Your readers will feel like they know you better and feel a connection, so they'll return more often
 6. You know that right now for Google it matters a lot that you have returning visitors (because it means your site is: quality)
 7. You'll get Google Authorship on your hands :-) For all your authors.
+
+http://www.squirrly.co
